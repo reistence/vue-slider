@@ -60,16 +60,22 @@ createApp({
     showThumbImg(clickedImg) {
       this.currentSlider = clickedImg;
     },
+
+    autoPlay() {
+      setInterval(() => {
+        this.showNext();
+        // console.log(id);
+      }, 3000);
+    },
+
     stopAutoPlay: function () {
       if (this.hover === true) {
-        console.log(hover);
-        clearInterval();
+        console.log(this.hover);
+        clearInterval(this.autoPlay);
       }
     },
   },
   created: function () {
-    setInterval(() => {
-      this.showNext();
-    }, 3000);
+    this.autoPlay();
   },
 }).mount("#app");
