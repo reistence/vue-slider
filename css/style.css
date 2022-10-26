@@ -15,8 +15,14 @@ body {
   align-items: center;
 }
 
+.slider-wrapper {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(252, 252, 252, 0.541);
+}
+
 .item {
-  float: left;
   width: 700px;
   height: 300px;
   position: relative;
@@ -42,7 +48,6 @@ body {
 }
 
 .thumbs {
-  float: left;
   height: 300px;
   background: #000;
   position: relative;

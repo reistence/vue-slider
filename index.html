@@ -26,7 +26,11 @@
             </div>
           </div>
 
-          <div class="thumbs" v-on:mouseover="stopAutoPlay">
+          <div
+            class="thumbs"
+            @mouseenter="stopAutoPlay(hover)"
+            @mouseleave="autoPlay(hover)"
+          >
             <div @click="showPrev" class="prev"></div>
             <div @click="showNext" class="next"></div>
             <div
