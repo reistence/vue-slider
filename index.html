@@ -26,13 +26,15 @@
             </div>
           </div>
 
-          <div class="thumbs">
+          <div
+            class="thumbs"
+            @mouseenter="hover = true"
+            @mouseleave="hover = false"
+          >
             <div @click="showPrev" class="prev"></div>
             <div @click="showNext" class="next"></div>
             <div
               @click="showThumbImg(index)"
-              @mouseover="hover = true"
-              @mouseleave="hover = false"
               v-for="thumbImg, index in slides"
               class="thumb"
               :class="currentSlider === index ? 'active' : ''"

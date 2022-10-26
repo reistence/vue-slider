@@ -63,6 +63,7 @@ createApp({
     stopAutoPlay: function () {
       if (this.hover === true) {
         console.log(hover);
+        clearInterval();
       }
     },
   },
