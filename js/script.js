@@ -38,6 +38,7 @@ createApp({
       ],
 
       currentSlider: 0,
+      hover: false,
     };
   },
 
@@ -58,6 +59,11 @@ createApp({
     },
     showThumbImg(clickedImg) {
       this.currentSlider = clickedImg;
+    },
+    stopAutoPlay: function () {
+      if (this.hover === true) {
+        console.log(hover);
+      }
     },
   },
   created: function () {
