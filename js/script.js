@@ -38,7 +38,6 @@ createApp({
       ],
 
       currentSlider: 0,
-      hover: false,
     };
   },
 
@@ -62,17 +61,16 @@ createApp({
     },
 
     autoPlay() {
-      setInterval(() => {
+      const myInterval = setInterval(() => {
         this.showNext();
-        // console.log(id);
       }, 3000);
+
+      return myInterval;
     },
 
     stopAutoPlay: function () {
-      if (this.hover === true) {
-        console.log(this.hover);
-        clearInterval(this.autoPlay);
-      }
+      clearInterval(this.myInterval);
+      console.log(this.myInterval);
     },
   },
   created: function () {
