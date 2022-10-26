@@ -1,9 +1,4 @@
-/*
-3- quando il mouse va in hover sullo slider, 
-bloccare l'autoplay e farlo riprendere
- quando esce
-*/
-
+//set createAPP
 const { createApp } = Vue;
 
 createApp({
@@ -36,8 +31,10 @@ createApp({
           text: "Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.",
         },
       ],
-
+      //slider to link
       currentSlider: 0,
+      //interval to clear
+      myInterval: "",
     };
   },
 
@@ -61,19 +58,16 @@ createApp({
     },
 
     autoPlay() {
-      const myInterval = setInterval(() => {
-        this.showNext();
-      }, 3000);
-
-      return myInterval;
+      this.myInterval = setInterval(this.showNext, 3000);
+      console.log(this.myInterval);
+      return this.myInterval;
     },
 
     stopAutoPlay: function () {
       clearInterval(this.myInterval);
-      console.log(this.myInterval);
     },
   },
   created: function () {
-    this.autoPlay();
+    this.autoPlay(this.hover);
   },
 }).mount("#app");
