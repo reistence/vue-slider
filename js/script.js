@@ -34,7 +34,7 @@ createApp({
       //slider to link
       currentSlider: 0,
       //interval to clear
-      myInterval: "",
+      myInterval: null,
     };
   },
 
@@ -58,13 +58,16 @@ createApp({
     },
 
     autoPlay() {
-      this.myInterval = setInterval(this.showNext, 3000);
-      console.log(this.myInterval);
-      return this.myInterval;
+      if (this.myInterval === null) {
+        this.myInterval = setInterval(this.showNext, 3000);
+        console.log(this.myInterval);
+        return this.myInterval;
+      }
     },
 
     stopAutoPlay: function () {
       clearInterval(this.myInterval);
+      this.myInterval = null;
     },
   },
   created: function () {

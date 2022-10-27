@@ -13,7 +13,14 @@
   <body>
     <div id="app">
       <div class="container">
-        <div class="slider-wrapper">
+        <div
+          class="slider-wrapper"
+          tabindex="0"
+          @focus="stopAutoPlay"
+          @blur="autoPlay"
+          @keyup.up="showPrev"
+          @keyup.down="showNext"
+        >
           <div
             class="item"
             :class="currentSlider === index ? 'active' : ''"
